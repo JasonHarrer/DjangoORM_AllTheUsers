@@ -33,6 +33,25 @@
                 </table>
             </div>
             <div id="div-thenewuser">
+                <h1>Add A User</h1>
+                <form method="POST" action="/new_user_form">
+                    {% csrf_token %}
+                    <div>
+                        <label for="first_name">First Name </label>
+                        <input type="text" name="first_name" id="first_name">
+
+                        <label for="last_name">Last Name </label>
+                        <input type="text" name="last_name" id="last_name">
+                    </div>
+                    <div>
+                        <label for="email_address">Email </label>
+                        <input type="email" name="email_address" id="email_address">
+
+                        <label for="age">Age </label>
+                        <input type="number" name="age" id="age">
+                    </div>
+                    <input type="submit" value="Add">
+                </form>
             </div>
         </div>
     </body>
