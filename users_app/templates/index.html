@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="description" content="Users with Templates Assignment">
+        <title>All The Users</title>
+        {% load static %}
+        <link rel="stylesheet" href='{% static "css/index.css" %}'
+    </head>
+    <body>
+        <div id="div-content">
+            <div id="div-alltheusers">
+                <h1>All The Users</h1>
+                <table>
+                    <thead>
+                        <tr>
+                            <th class="td-id">ID</th>
+                            <th class="td-name">Name</th>
+                            <th class="td-email">Email</th>
+                            <th class="td-age">Age</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for user in users %}
+                            <tr>
+                                <td class="td-id">{{user.id}}</td>
+                                <td class="td-name">{{user.first_name}} {{user.last_name}}</td>
+                                <td class="td-email">{{user.email_address}}</td>
+                                <td class="td-age">{{user.age}}</td>
+                            </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+            <div id="div-thenewuser">
+            </div>
+        </div>
+    </body>
+</html>
